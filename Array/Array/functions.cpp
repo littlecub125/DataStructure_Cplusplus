@@ -34,7 +34,7 @@ public:
 	{
 
 	}
-	void insert()
+	void insert(int index, int x)
 	{
 	}
 };
