@@ -12,6 +12,11 @@ private:
 	int length;
 
 public:
+
+	// [10] is one of component of template T *A
+	// So, [10] also needs to be T for typename
+	// if programmer want to use only int, then  he can state new int [10] instead
+
 	Array()			// Constructor with default size
 	{
 		size = 10;
@@ -32,14 +37,21 @@ public:
 	}
 
 	void Display();
+
+	// x is one of component of template T *A
+	// So, x also needs to be T for typename
 	void insert(int index, T x);
+
+	// Delete returns what did it deleted at the end
+	// because Template<T> is used, it should use T for typename
 	T Delete(int index);
 
 
 };
 
-template<class T>
 
+// Every time template for function, you should state template<class T>
+template<class T>
 void Array<T>::Display()
 {
 	for (int i = 0; i < length; i++)
@@ -48,6 +60,10 @@ void Array<T>::Display()
 	}
 	cout << endl;
 }
+
+// Every time template for function, you should state template<class T>
+// x is one of component of template T *A
+// So, x also needs to be T for typename
 template<class T>
 void Array<T>::insert(int index, T x)
 {
